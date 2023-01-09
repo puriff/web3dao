@@ -12,7 +12,7 @@ contract CryptoDevToken is ERC20,Ownable  {
     uint256 public maxSupply = 10000 * 10**18;
     uint256 public constant tokensPerNFT = 10 * 10**18;
     uint256 public constant ico_price = 0.001 ether;
-    mapping (uint256=>bool) claimedTokens; //track tokenIDs that have claimed their tokens
+    mapping (uint256=>bool) public claimedTokens; //track tokenIDs that have claimed their tokens
 
     modifier cryptoDevHolder {
         require(cryptoDev.balanceOf(msg.sender) > 0, "You do not hold a CryptoDev NFT");

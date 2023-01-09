@@ -5,12 +5,10 @@
     justify-content: center;
     align-items: center;
     font-family: "Courier New", Courier, monospace;
-    background: blue;
 }
 
 .title {
     position: relative;
-    background: red;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +16,7 @@
     font-size: 2rem;
     text-align: center;
     text-align: center;
-    width: 70%;
+    width: 90%;
     margin: auto;
   }
   
@@ -26,18 +24,55 @@
     text-align: center;
     line-height: 1;
     position: relative;
-    background: red;
     display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
     text-align: center;
-    text-align: center;
-    width: 70%;
+    width: 90%;
     font-size: 1.2rem;
     margin: auto;
     margin-bottom: 15px;
     margin-top: 15px;
+}
+
+.button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    width: 70%;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    background: white;
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+.button:hover {
+    background: transparent;
+    color: white;
+    outline: 1px solid white;
+    cursor: pointer;
+}
+
+.input {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    font-size: 24px;
+}
+
+.image {
+    width: 90%;
 }
 
 .footer {
@@ -50,5 +85,11 @@
 }
 
 @media (min-width: 1000px) {
+    .main {
+        flex-direction: row;
+    }
 
+    .image {
+        width: 40%;
+    }
 }

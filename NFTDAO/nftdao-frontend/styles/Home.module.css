@@ -1,0 +1,95 @@
+.main {
+  position: relative;
+  height: 95vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.title {
+    width: 90%;
+    margin: auto;
+}
+
+.description {
+  width: 90%;
+  margin: auto;
+}
+
+.image {
+  width: 80%;
+  margin-top: 1em;
+}
+
+.buttonDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+.button {
+  margin: auto;
+  width: 70%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background: white;
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background: transparent;
+  color: white;
+  outline: 1px solid white;
+  cursor: pointer;
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+}
+
+@media (min-width: 1000px) {
+  .main {
+    flex-direction: row;
+  }
+
+  .title {
+    font-size: 50px;
+  }
+  
+  .description {
+    font-size: 24px;
+  }
+
+  .image {
+    margin-top: 0em;
+    height: 60%;
+    width: fit-content;
+  }
+
+  .buttonDiv {
+    flex-direction: row;
+    width: 70%;
+    margin: auto;
+    margin-top: 2em;
+  }
+
+  .button {
+    width: 40%;
+  }
+}

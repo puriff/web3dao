@@ -2,7 +2,7 @@ require("dotenv").config({ path: ".env" });
 
 async function main() {
 
-  const CryptoDevsExchangeContract = await ethers.getContractFactory("CryptoDevDAO");
+  const CryptoDevsExchangeContract = await ethers.getContractFactory("Exchange");
   const CryptoDevsExchange = await CryptoDevsExchangeContract.deploy(
     "0xF36a9a0cE6370140f7d8386dd4A63b41E3D5CB6F"
   );

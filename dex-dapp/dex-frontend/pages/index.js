@@ -17,6 +17,8 @@ export default function Home() {
   const [etherBalance, setEtherBalance] = useState(0)
   const [LPBalance, setLPBalance] = useState(0)
   const [selectedTab, setSelectedTab] = useState("Liquidity")
+  const [tokenValue, setTokenValue] = useState("ETH")
+  const [tokenSwapAmount, setTokenSwapAmount] = useState(0)
   const web3ModalRef = useRef()
 
   const getProviderOrSigner = async (needSigner = false) => {
@@ -82,6 +84,35 @@ export default function Home() {
     }
   }
 
+  const getDexReserves = async() => {
+    
+  }
+
+  const getAmountCryptoDevTokens = async(inputTokenAmount) => {
+    try {
+      let signer = await getProviderOrSigner(true)
+      let exchangeContract = new ethers.Contract(EXCHANGE_CONTRACT_ADDRESS, EXCHANGE_CONTRACT_ABI, signer)
+
+      uint ethReserve =  ethBalance - msg.value;
+            uint cryptoDevTokenAmount = (msg.value * cryptoDevReserve)/(ethReserve);
+            require(cryptoDevAmount >= cryptoDevTokenAmount, "Amount of tokens sent is less than the minimum tokens required");
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  const addLiquidity = async(amountETH, amountCryptoDev) => {
+    try {
+      let signer = await getProviderOrSigner(true)
+      let exchangeContract = new ethers.Contract(EXCHANGE_CONTRACT_ADDRESS, EXCHANGE_CONTRACT_ABI, signer)
+      let balance = await exchangeContract.balanceOf(address);
+      let balanceReadable = toReadableValue(balance)
+      setLPBalance(balanceReadable)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   const toReadableValue = (bignumber) => {
     return Number(bignumber / Math.pow(10,18))
   }
@@ -110,16 +141,46 @@ export default function Home() {
   }
 
   const renderSwapTab = () => {
-
+    return ( 
+      <div className={styles.swapBox}>
+        <div className={styles.inputBox}>
+          <input className={styles.input} type="number"
+            placeholder="Amount of tokens"
+            onChange={(e) => setTokenSwapAmount((e.target.value))}
+            ></input>
+          <select className={styles.select} onChange={(e) => setTokenValue(e.target.value)}>
+            <option value="ETH">ETH</option>
+            <option value="CryptoDev">CryptoDev</option>
+          </select>
+        </div>
+        <div className={styles.description}>You will get x CryptoDev tokens</div>
+        <button className={styles.button}>Swap {tokenValue == "ETH" ? "ETH" : "CryptoDev"}</button>
+      </div>
+    )
   }
 
   const renderManageLiquidityTab = () => {
     return ( 
       <div>
-        <div className={styles.description}>Your balances :</div>
-        <div className={styles.description}>{etherBalance} ETH</div>
-        <div className={styles.description}>{tokenDevBalance} CryptoDev token</div>
-        <div className={styles.description}>{LPBalance} CryptoDev LP tokens</div>
+          <div className={styles.description}>Your balances :</div>
+          <div className={styles.description}>{etherBalance} ETH</div>
+          <div className={styles.description}>{tokenDevBalance} CryptoDev token</div>
+          <div className={styles.description}>{LPBalance} CryptoDev LP tokens</div>
+          <div className={styles.liquidityBoxes}>
+            <input className={styles.input} type="number"
+              placeholder="Amount of ETH"
+              onChange={(e) => console.log((e.target.value))}
+              ></input>
+            <div className={styles.description}>You will need x CryptoDev tokens</div>
+            <button className={styles.button}>Add liquidity</button>
+          </div>
+          <div className={styles.liquidityBoxes}>
+            <input className={styles.input} type="number"
+              placeholder="Amount of LP tokens"
+              onChange={(e) => console.log((e.target.value))}></input>
+            <div className={styles.description}>You will get x CryptoDev tokens and x ETH</div>
+            <button className={styles.button}>Remove liquidity</button>
+          </div>
       </div>
     )
   }

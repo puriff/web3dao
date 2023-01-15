@@ -85,17 +85,13 @@ export default function Home() {
   }
 
   const getDexReserves = async() => {
-    
+
   }
 
   const getAmountCryptoDevTokens = async(inputTokenAmount) => {
     try {
       let signer = await getProviderOrSigner(true)
       let exchangeContract = new ethers.Contract(EXCHANGE_CONTRACT_ADDRESS, EXCHANGE_CONTRACT_ABI, signer)
-
-      uint ethReserve =  ethBalance - msg.value;
-            uint cryptoDevTokenAmount = (msg.value * cryptoDevReserve)/(ethReserve);
-            require(cryptoDevAmount >= cryptoDevTokenAmount, "Amount of tokens sent is less than the minimum tokens required");
     } catch (err) {
       console.log(err)
     }

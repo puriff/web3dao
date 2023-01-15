@@ -46,10 +46,10 @@
   text-align: center;
   margin: auto;
   width: 70%;
-  margin-top: 2%;
-  margin-bottom: 5%;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-top: 3%;
+  padding-bottom: 3%;
   background: white;
   color: black;
   font-size: 24px;
@@ -68,13 +68,80 @@
   width: 90%;
 }
 
+.input {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  font-size: 24px;
+  border-radius: 10px;
+  color: white;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
 .footer {
   position: relative;
   width: 100%;
   display: flex;
   border-top: 1px solid #eaeaea;
-  justify-content: center;
   padding-top: 1%;
+  padding-bottom: 1%;
+  justify-content: center;
+}
+
+.swapBox {
+  position: relative;
+  width: 100%;
+  border-top: 1px solid #eaeaea;
+  border: 1px solid white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  margin-top: 2%;
+  padding-top: 2%;
+}
+
+.liquidityBoxes {
+  position: relative;
+  width: 70%;
+  border-top: 1px solid #eaeaea;
+  border: 1px solid white;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 2%;
+  padding-top: 2%;
+}
+
+.select {
+  position: relative;
+  font-size: 24px;
+  width: 70%;
+  height: 100%;
+  display: flex;
+  text-align: center;
+  border-radius: 10px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-left: 5%;
+}
+
+.inputBox {
+  width: 90%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 @media (min-width: 1000px) {
@@ -98,5 +165,13 @@
 
   .button {
     width: 40%;
+  }
+
+  .liquidityBoxes {
+    flex-direction: column;
+  }
+
+  .swapBox {
+    flex-direction: column;
   }
 }

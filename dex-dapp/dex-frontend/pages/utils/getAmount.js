@@ -4,18 +4,18 @@ import {
   EXCHANGE_CONTRACT_ADDRESS,
   TOKEN_CONTRACT_ABI,
   TOKEN_CONTRACT_ADDRESS,
-} from "../constants";
+} from "../../constants";
 
 export const getEtherBalance = async(provider, address, contract = false) => {
     try {
-        let balance
       if(contract) {
-        balance = await provider.getBalance(contract)
+        const balance = await provider.getBalance(EXCHANGE_CONTRACT_ADDRESS)
+        return balance
       }
       else {
-        balance = await provider.getBalance();
+        const balance = await provider.getBalance();
+        return balance
       }
-      return balance
     } catch (err) {
       console.log(err)
     }
@@ -44,7 +44,7 @@ export const getLPBalance = async(provider, address)=> {
 export const getReserveCDTokens = async(provider, address) => {
     try {
         let exchangeContract = new Contract(EXCHANGE_CONTRACT_ADDRESS, EXCHANGE_CONTRACT_ABI, provider)
-        let reserve = await exchangeContract.getReserve();
+        let reserve = await exchangeContract.getReserves();
         return reserve
       } catch (err) {
         console.log(err)

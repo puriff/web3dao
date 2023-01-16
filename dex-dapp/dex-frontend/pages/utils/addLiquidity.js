@@ -4,7 +4,7 @@ import {
   EXCHANGE_CONTRACT_ADDRESS,
   TOKEN_CONTRACT_ABI,
   TOKEN_CONTRACT_ADDRESS,
-} from "../constants";
+} from "../../constants";
 
 export const calculateCD = async(_addEther = "0", etherBalanceContract, CDTokenReserve) => {
     const _addEtherAmountWei = utils.parseEther(_addEther)
@@ -16,7 +16,7 @@ export const addLiquidity = async(provider, CDTokenAmount, etherAmount) => {
     try {
         const exchangeContract = new Contract(EXCHANGE_CONTRACT_ADDRESS, EXCHANGE_CONTRACT_ABI, provider)
         const tokenDevContract = new Contract(TOKEN_CONTRACT_ADDRESS, TOKEN_CONTRACT_ABI, provider)
-        let approve = await tokenDevContract.approve(exchangeContract, etherAmount.toString())
+        let approve = await tokenDevContract.approve(EXCHANGE_CONTRACT_ADDRESS, CDTokenAmount)
         await approve.wait()
         let addLiquidity = await exchangeContract.addLiquidity(CDTokenAmount, {value: etherAmount})
         await addLiquidity.wait()

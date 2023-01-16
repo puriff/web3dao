@@ -9,6 +9,7 @@ export const TOKEN_CONTRACT_ABI = [
     "function claimedTokens(uint256) external view returns (bool)",
     "function withdrawFunds() external",
     "function owner() external view returns (address)",
+    "function approve(address _addr, uint256 amount) external returns(bool)"
 ];
 export const TOKEN_CONTRACT_ADDRESS = "0xF36a9a0cE6370140f7d8386dd4A63b41E3D5CB6F";
 export const EXCHANGE_CONTRACT_ABI = [
@@ -19,5 +20,6 @@ export const EXCHANGE_CONTRACT_ABI = [
     "function getReserves() external view returns (uint256)",
     "function addLiquidity(uint256 cryptoDevAmount)external payable returns (uint256)",
     "function balanceOf(address account) external view returns (uint256)",
+    "function totalSupply() external view returns (uint256)",
 ]
 export const EXCHANGE_CONTRACT_ADDRESS = "0x626385899E0D8870Ad3240Fb934619a777C8A86f";

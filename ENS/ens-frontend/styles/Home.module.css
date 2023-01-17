@@ -24,6 +24,32 @@
   margin-bottom: 2em;
 }
 
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  width: 80%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background: black;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background: transparent;
+  color: black;
+  outline: 1px solid black;
+  cursor: pointer;
+}
+
 .image {
   position: relative;
   width: 125%;
@@ -49,6 +75,12 @@
   }
 
   .image {
-    width: 70%;
+    width: 50%;
+  }
+
+  .button {
+    padding-top: 1%;
+    padding-bottom: 1%;
+    width: 20%;
   }
 }

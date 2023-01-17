@@ -60,6 +60,20 @@ export default function Home() {
     }
   }, [walletConnected])
 
+  const renderButton = () => {
+      if (walletConnected) {
+        return (<button onClick={connectWallet} className={styles.button}>
+            Wallet connected
+        </button>)
+      } else {
+        return (
+          <button onClick={connectWallet} className={styles.button}>
+            Connect your wallet
+          </button>
+        );
+      }
+  }
+
   return (
     <div>
       <Head>
@@ -71,6 +85,7 @@ export default function Home() {
       <div className={styles.main}>
         <h1 className={styles.title}>Welcome to LearnWEB3 frens - {ENS != "" ? ENS : address.substring(0,6)+"..."+address.substring(address.length-6)}</h1>
         <div className={styles.description}>Frens are a NFT collection for LearnWeb3 students</div>
+        {renderButton()}
         <img className={styles.image} src="./learn.png"></img>
       </div>
       <footer className={styles.footer}> Made with &#10084; by Purif </footer>

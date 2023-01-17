@@ -1,0 +1,108 @@
+.main {
+  width: 100%;
+  height: 95vh;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  background: black;
+}
+
+.title {
+  color: white;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+.description {
+  color: white;
+  width: 80%;
+  margin: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  width: 80%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background: white;
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background: transparent;
+  color: white;
+  outline: 1px solid white;
+  cursor: pointer;
+}
+
+.image {
+  height: 50%;
+  border-radius: 20px;
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+}
+
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 1000px) {
+    .main {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: auto;
+    }
+
+    .box {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      width: 60%;
+    }
+
+    .button {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: auto;
+      width: 40%;
+    }
+    
+
+    .image {
+      position: relative;
+      display: flex;
+      height: 60%;
+    }
+
+
+}
+
+

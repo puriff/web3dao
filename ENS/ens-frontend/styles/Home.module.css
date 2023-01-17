@@ -1,0 +1,54 @@
+.main {
+  width: 100%;
+  height: 95vh;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  background: white;
+}
+
+.title {
+  color: black;
+  position: relative;
+  font-size: 36px;
+}
+
+.description {
+  color: black;
+  position: relative;
+  display: flex;
+  font-size: 24px;
+  margin-bottom: 2em;
+}
+
+.image {
+  position: relative;
+  width: 125%;
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #eaeaea;
+  justify-content: center;
+}
+
+@media (min-width: 1000px) {
+
+  .title {
+    width: 90%;
+    font-size: 56px;
+  }
+
+  .description {
+    margin-bottom: 0em;
+  }
+
+  .image {
+    width: 70%;
+  }
+}

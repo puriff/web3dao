@@ -33,3 +33,4 @@ yarn-error.log*
 
 tsconfig.json
 yarn.lock
+package.json

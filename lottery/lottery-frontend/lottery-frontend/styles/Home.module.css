@@ -1,0 +1,134 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 95vh;
+  width: 100vw;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.title {
+  position: relative;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.description {
+  position: relative;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.inputDiv {
+  display: flex;
+  margin: auto;
+  position: relative;
+  flex-direction: column;
+  width: 70vw;
+  margin-bottom: 1em;
+}
+
+.input {
+  margin-bottom: 1em;
+  height: 2em;
+  color: white;
+  outline: 1px solid white;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.image {
+  width: 80%;
+  border: 1px solid white;
+  border-radius: 15px;  
+  margin-bottom: 1em;
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #eaeaea;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  justify-content: center;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  width: 70%;
+  margin-bottom: 1%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  background: white;
+  color: black;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.button:hover {
+  background: transparent;
+  color: white;
+  outline: 1px solid white;
+  cursor: pointer;
+}
+
+@media (min-width: 1000px) {
+  .main {
+    flex-direction: row;
+    height: 95vh;
+  }
+
+  .leftSide {
+    margin-right: 5em;
+    flex-direction: column;
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .inputDiv {
+    display: flex;
+    margin: auto;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1em;
+  }
+
+  .button {
+    width: fit-content;
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  .footer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    border-top: 1px solid #eaeaea;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    justify-content: center;
+  }
+
+  .image {
+    width:30%;
+  }
+}
